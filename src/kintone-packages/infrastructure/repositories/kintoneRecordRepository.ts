@@ -10,7 +10,7 @@ import { KintoneFields } from '../../domain/models/KintoneFields/kintoneFields';
 import { KintoneRecord } from '../../domain/models/KintoneRecord/kintoneRecord';
 import { KintoneRecordId } from '../../domain/models/KintoneRecord/kintoneRecordId';
 import { KintoneRestRecordApi } from '../externalapi/kintoneRestApi/kintoneRestRecordApi';
-import { BaseKintoneRepository } from './_baseKintoneRepository';
+import { BaseKintoneRepository } from './baseKintoneRepository';
 
 
 export class KintoneRecordRepository extends BaseKintoneRepository implements KintoneRecordRepositoryInterface{

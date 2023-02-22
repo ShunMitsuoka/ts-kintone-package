@@ -7,8 +7,8 @@ import { KintoneDeployStatus } from "../../domain/models/KintoneDeployStatus/kin
 import { KintoneFields } from "../../domain/models/KintoneFields/kintoneFields";
 import { KintoneJsPlugin } from "../externalapi/kintoneJsApi/kintoneJsPlugin";
 import { KintoneRestAppApi } from "../externalapi/kintoneRestApi/kintoneRestAppApi";
+import { BaseKintoneRepository } from "./baseKintoneRepository";
 import { KintoneFieldsRepository } from "./kintoneFieldsRepository";
-import { BaseKintoneRepository } from "./_baseKintoneRepository";
 
 export class KintoneAppRepository extends BaseKintoneRepository implements KintoneAppRepositoryInterface{
 
