@@ -1,5 +1,6 @@
-import { KintonePluginConfig } from "@kintone-packages/domain/models/KintonePluginConfig/kintonePluginConfig";
-import { PluginId } from "@kintone-packages/domain/models/KintonePluginId/pluginId";
+import { KintonePluginConfig } from "../../models/KintonePluginConfig/kintonePluginConfig";
+import { PluginId } from "../../models/KintonePluginId/pluginId";
+
 
 export interface KintonePluginConfigRepositoryInterface{
     get(pluginId : PluginId) : KintonePluginConfig;

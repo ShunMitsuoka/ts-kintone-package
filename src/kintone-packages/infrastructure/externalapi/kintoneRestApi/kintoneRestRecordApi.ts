@@ -1,8 +1,9 @@
-import { KintoneAppConst } from "@kintone-packages/domain/consts/kintoneAppConst";
-import { AppId } from "@kintone-packages/domain/models/KintoneApp/appId";
-import { KintoneField } from "@kintone-packages/domain/models/KintoneField/kintoneField";
-import { KintoneRecord } from "@kintone-packages/domain/models/KintoneRecord/kintoneRecord";
-import { KintoneRecordId } from "@kintone-packages/domain/models/KintoneRecord/kintoneRecordId";
+import { KintoneAppConst } from "../../../domain/consts/kintoneAppConst";
+import { AppId } from "../../../domain/models/KintoneApp/appId";
+import { KintoneField } from "../../../domain/models/KintoneField/kintoneField";
+import { KintoneRecord } from "../../../domain/models/KintoneRecord/kintoneRecord";
+import { KintoneRecordId } from "../../../domain/models/KintoneRecord/kintoneRecordId";
+
 
 
 export class KintoneRestRecordApi {

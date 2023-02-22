@@ -1,7 +1,7 @@
-import { ValueObject } from "@kintone-packages/domain/interfaces/models/valueObject";
 import { KintoneFieldPropertyOption } from "./kintoneFieldPropertyOption";
 import { KintoneFieldType } from "./kintoneFieldType";
 import { KintoneValue } from "../KintoneValue/kintoneValue";
+import { ValueObject } from "../../interfaces/models/valueObject";
 
 
 interface FieldPropertiesProps {

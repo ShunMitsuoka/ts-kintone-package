@@ -1,6 +1,6 @@
-import { AppId } from "@kintone-packages/domain/models/KintoneApp/appId";
-import { KintoneApp } from "@kintone-packages/domain/models/KintoneApp/kintoneApp";
-import { KintoneField } from "@kintone-packages/domain/models/KintoneField/kintoneField";
+import { AppId } from "../../models/KintoneApp/appId";
+import { KintoneApp } from "../../models/KintoneApp/kintoneApp";
+import { KintoneField } from "../../models/KintoneField/kintoneField";
 
 export interface KintoneFieldRepositoryInterface{
     getByFieldCode(appId : AppId) : Promise<KintoneField>;

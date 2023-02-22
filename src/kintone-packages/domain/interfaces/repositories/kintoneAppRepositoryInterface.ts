@@ -1,6 +1,7 @@
-import { AppId } from "@kintone-packages/domain/models/KintoneApp/appId";
-import { KintoneApp } from "@kintone-packages/domain/models/KintoneApp/kintoneApp";
-import { KintoneDeployStatus } from "@kintone-packages/domain/models/KintoneDeployStatus/kintoneDeployStatus";
+import { AppId } from "../../models/KintoneApp/appId";
+import { KintoneApp } from "../../models/KintoneApp/kintoneApp";
+import { KintoneDeployStatus } from "../../models/KintoneDeployStatus/kintoneDeployStatus";
+
 
 export interface KintoneAppRepositoryInterface{
     getCurrentAppId() : AppId;

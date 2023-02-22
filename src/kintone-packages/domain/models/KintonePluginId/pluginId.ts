@@ -1,4 +1,4 @@
-import { ValueObject } from "@kintone-packages/domain/interfaces/models/valueObject";
+import { ValueObject } from "../../interfaces/models/valueObject";
 
 export class PluginId implements ValueObject {
     readonly id : string;

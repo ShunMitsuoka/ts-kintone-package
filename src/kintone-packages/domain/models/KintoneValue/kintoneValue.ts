@@ -1,4 +1,4 @@
-import { ValueObject } from "@kintone-packages/domain/interfaces/models/valueObject";
+import { ValueObject } from "../../interfaces/models/valueObject";
 
 export abstract class KintoneValue implements ValueObject {
     protected value : any;

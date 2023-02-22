@@ -1,4 +1,3 @@
-import { Entity } from "@kintone-packages/domain/interfaces/models/entity";
 import { KintoneField } from "../KintoneField/kintoneField";
 import { KintoneFields } from "../KintoneFields/kintoneFields";
 import { AppId } from "./appId";
@@ -7,6 +6,7 @@ import { KintoneDefaultFields } from "../KintoneFields/kintoneDefaultFields";
 import { KintoneFieldCode } from "../KintoneField/kintoneFieldCode";
 import { KintoneRecordId } from "../KintoneRecord/kintoneRecordId";
 import { KintoneRecord } from "../KintoneRecord/kintoneRecord";
+import { Entity } from "../../interfaces/models/entity";
 
 export class KintoneApp implements Entity {
     

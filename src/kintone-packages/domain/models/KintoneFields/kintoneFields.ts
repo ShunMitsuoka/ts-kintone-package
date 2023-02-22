@@ -1,4 +1,4 @@
-import { Entity } from "@kintone-packages/domain/interfaces/models/entity";
+import { Entity } from "../../interfaces/models/entity";
 import { KintoneField } from "../KintoneField/kintoneField";
 
 export class KintoneFields implements Entity {

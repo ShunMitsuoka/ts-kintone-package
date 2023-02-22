@@ -1,13 +1,14 @@
-import { KintoneFieldRepositoryInterface } from "@kintone-packages/domain/interfaces/repositories/kintoneFieldRepositoryInterface";
-import { AppId } from "@kintone-packages/domain/models/KintoneApp/appId";
-import { KintoneApp } from "@kintone-packages/domain/models/KintoneApp/kintoneApp";
-import { KintoneField } from "@kintone-packages/domain/models/KintoneField/kintoneField";
-import { KintoneFieldCode } from "@kintone-packages/domain/models/KintoneField/kintoneFieldCode";
-import { KintoneFieldProperties } from "@kintone-packages/domain/models/KintoneField/kintoneFieldProperties";
-import { KintoneFieldPropertyOption } from "@kintone-packages/domain/models/KintoneField/kintoneFieldPropertyOption";
-import { KintoneFieldType } from "@kintone-packages/domain/models/KintoneField/kintoneFieldType";
-import { KintoneArrayValue } from "@kintone-packages/domain/models/KintoneValue/kintoneArrayValue";
-import { KintoneSingleValue } from "@kintone-packages/domain/models/KintoneValue/kintoneSingleValue";
+
+import { KintoneFieldRepositoryInterface } from "../../domain/interfaces/repositories/kintoneFieldRepositoryInterface";
+import { AppId } from "../../domain/models/KintoneApp/appId";
+import { KintoneApp } from "../../domain/models/KintoneApp/kintoneApp";
+import { KintoneField } from "../../domain/models/KintoneField/kintoneField";
+import { KintoneFieldCode } from "../../domain/models/KintoneField/kintoneFieldCode";
+import { KintoneFieldProperties } from "../../domain/models/KintoneField/kintoneFieldProperties";
+import { KintoneFieldPropertyOption } from "../../domain/models/KintoneField/kintoneFieldPropertyOption";
+import { KintoneFieldType } from "../../domain/models/KintoneField/kintoneFieldType";
+import { KintoneArrayValue } from "../../domain/models/KintoneValue/kintoneArrayValue";
+import { KintoneSingleValue } from "../../domain/models/KintoneValue/kintoneSingleValue";
 import { KintoneRestFieldsApi } from "../externalapi/kintoneRestApi/kintoneRestFieldsApi";
 import { BaseKintoneRepository } from "./_baseKintoneRepository";
 

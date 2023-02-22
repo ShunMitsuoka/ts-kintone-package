@@ -1,9 +1,10 @@
-import { KintoneAppConst } from "@kintone-packages/domain/consts/kintoneAppConst";
-import { KintoneAppRepositoryInterface } from "@kintone-packages/domain/interfaces/repositories/kintoneAppRepositoryInterface";
-import { AppId } from "@kintone-packages/domain/models/KintoneApp/appId";
-import { KintoneApp } from "@kintone-packages/domain/models/KintoneApp/kintoneApp";
-import { KintoneDeployStatus } from "@kintone-packages/domain/models/KintoneDeployStatus/kintoneDeployStatus";
-import { KintoneFields } from "@kintone-packages/domain/models/KintoneFields/kintoneFields";
+
+import { KintoneAppConst } from "../../domain/consts/kintoneAppConst";
+import { KintoneAppRepositoryInterface } from "../../domain/interfaces/repositories/kintoneAppRepositoryInterface";
+import { AppId } from "../../domain/models/KintoneApp/appId";
+import { KintoneApp } from "../../domain/models/KintoneApp/kintoneApp";
+import { KintoneDeployStatus } from "../../domain/models/KintoneDeployStatus/kintoneDeployStatus";
+import { KintoneFields } from "../../domain/models/KintoneFields/kintoneFields";
 import { KintoneJsPlugin } from "../externalapi/kintoneJsApi/kintoneJsPlugin";
 import { KintoneRestAppApi } from "../externalapi/kintoneRestApi/kintoneRestAppApi";
 import { KintoneFieldsRepository } from "./kintoneFieldsRepository";

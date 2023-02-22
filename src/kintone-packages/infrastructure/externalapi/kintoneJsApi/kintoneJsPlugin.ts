@@ -1,6 +1,7 @@
-import { AppId } from "@kintone-packages/domain/models/KintoneApp/appId";
-import { KintoneUser } from "@kintone-packages/domain/models/KintoneUser/kintoneUser";
-import { KintoneUserId } from "@kintone-packages/domain/models/KintoneUser/kintoneUserId";
+import { AppId } from "../../../domain/models/KintoneApp/appId";
+import { KintoneUser } from "../../../domain/models/KintoneUser/kintoneUser";
+import { KintoneUserId } from "../../../domain/models/KintoneUser/kintoneUserId";
+
 
 export class KintoneJsPlugin {
     public static getConfig(pluginId : string) : any{

@@ -1,5 +1,6 @@
-import { AppId } from "@kintone-packages/domain/models/KintoneApp/appId";
-import { KintoneApp } from "@kintone-packages/domain/models/KintoneApp/kintoneApp";
+import { AppId } from "../../../domain/models/KintoneApp/appId";
+import { KintoneApp } from "../../../domain/models/KintoneApp/kintoneApp";
+
 
 export class KintoneRestAppApi {
     public getAll(limit: number, offset: number) : Promise<any>{

@@ -1,4 +1,4 @@
-import { KintoneUser } from "@kintone-packages/domain/models/KintoneUser/kintoneUser";
+import { KintoneUser } from "../../models/KintoneUser/kintoneUser";
 
 export interface KintoneUserRepositoryInterface{
     get() : KintoneUser;

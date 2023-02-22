@@ -1,6 +1,7 @@
-import { KintonePluginConfigRepositoryInterface } from "@kintone-packages/domain/interfaces/repositories/kintonePluginConfigRepositoryInterface";
-import { KintonePluginConfig } from "@kintone-packages/domain/models/KintonePluginConfig/kintonePluginConfig";
-import { PluginId } from "@kintone-packages/domain/models/KintonePluginId/pluginId";
+
+import { KintonePluginConfigRepositoryInterface } from "../../domain/interfaces/repositories/kintonePluginConfigRepositoryInterface";
+import { KintonePluginConfig } from "../../domain/models/KintonePluginConfig/kintonePluginConfig";
+import { PluginId } from "../../domain/models/KintonePluginId/pluginId";
 import { KintoneJsPlugin } from "../externalapi/kintoneJsApi/kintoneJsPlugin";
 
 export class KintonePluginConfigRepository implements KintonePluginConfigRepositoryInterface{

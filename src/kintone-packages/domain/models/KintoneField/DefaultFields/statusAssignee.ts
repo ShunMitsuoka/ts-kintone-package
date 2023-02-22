@@ -1,4 +1,4 @@
-import { KintoneFieldTypeConst } from "@kintone-packages/domain/consts/kintoneFieldTypeConst";
+import { KintoneFieldTypeConst } from "../../../consts/kintoneFieldTypeConst";
 import { KintoneField } from "../kintoneField";
 import { KintoneFieldCode } from "../kintoneFieldCode";
 import { KintoneFieldProperties } from "../kintoneFieldProperties";

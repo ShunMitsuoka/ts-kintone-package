@@ -1,7 +1,7 @@
-import { AppId } from "@kintone-packages/domain/models/KintoneApp/appId";
-import { KintoneApp } from "@kintone-packages/domain/models/KintoneApp/kintoneApp";
-import { KintoneField } from "@kintone-packages/domain/models/KintoneField/kintoneField";
-import { KintoneFieldPropertyOption } from "@kintone-packages/domain/models/KintoneField/kintoneFieldPropertyOption";
+import { AppId } from "../../../domain/models/KintoneApp/appId";
+import { KintoneApp } from "../../../domain/models/KintoneApp/kintoneApp";
+import { KintoneField } from "../../../domain/models/KintoneField/kintoneField";
+import { KintoneFieldPropertyOption } from "../../../domain/models/KintoneField/kintoneFieldPropertyOption";
 
 
 export class KintoneRestFieldsApi {

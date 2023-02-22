@@ -1,7 +1,8 @@
-import { AppId } from "@kintone-packages/domain/models/KintoneApp/appId";
-import { KintoneField } from "@kintone-packages/domain/models/KintoneField/kintoneField";
-import { KintoneRecord } from "@kintone-packages/domain/models/KintoneRecord/kintoneRecord";
-import { KintoneRecordId } from "@kintone-packages/domain/models/KintoneRecord/kintoneRecordId";
+import { AppId } from "../../models/KintoneApp/appId";
+import { KintoneField } from "../../models/KintoneField/kintoneField";
+import { KintoneRecord } from "../../models/KintoneRecord/kintoneRecord";
+import { KintoneRecordId } from "../../models/KintoneRecord/kintoneRecordId";
+
 
 export interface KintoneRecordRepositoryInterface{
     getAll(appId: AppId, query: string, result?: any[], _params?: any) : Promise<KintoneRecord[]>;

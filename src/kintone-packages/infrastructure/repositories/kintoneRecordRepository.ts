@@ -1,13 +1,14 @@
-import { KintoneRecordRepositoryInterface } from '@kintone-packages/domain/interfaces/repositories/kintoneRecordRepositoryInterface';
-import { AppId } from '@kintone-packages/domain/models/KintoneApp/appId';
-import { KintoneField } from '@kintone-packages/domain/models/KintoneField/kintoneField';
-import { KintoneFieldCode } from '@kintone-packages/domain/models/KintoneField/kintoneFieldCode';
-import { KintoneFieldProperties } from '@kintone-packages/domain/models/KintoneField/kintoneFieldProperties';
-import { KintoneFieldType } from '@kintone-packages/domain/models/KintoneField/kintoneFieldType';
-import { KintoneFields } from '@kintone-packages/domain/models/KintoneFields/kintoneFields';
-import { KintoneRecord } from '@kintone-packages/domain/models/KintoneRecord/kintoneRecord';
-import { KintoneRecordId } from '@kintone-packages/domain/models/KintoneRecord/kintoneRecordId';
+
 import {chunk} from 'lodash';
+import { KintoneRecordRepositoryInterface } from '../../domain/interfaces/repositories/kintoneRecordRepositoryInterface';
+import { AppId } from '../../domain/models/KintoneApp/appId';
+import { KintoneField } from '../../domain/models/KintoneField/kintoneField';
+import { KintoneFieldCode } from '../../domain/models/KintoneField/kintoneFieldCode';
+import { KintoneFieldProperties } from '../../domain/models/KintoneField/kintoneFieldProperties';
+import { KintoneFieldType } from '../../domain/models/KintoneField/kintoneFieldType';
+import { KintoneFields } from '../../domain/models/KintoneFields/kintoneFields';
+import { KintoneRecord } from '../../domain/models/KintoneRecord/kintoneRecord';
+import { KintoneRecordId } from '../../domain/models/KintoneRecord/kintoneRecordId';
 import { KintoneRestRecordApi } from '../externalapi/kintoneRestApi/kintoneRestRecordApi';
 import { BaseKintoneRepository } from './_baseKintoneRepository';
 

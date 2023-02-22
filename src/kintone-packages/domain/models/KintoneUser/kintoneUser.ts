@@ -1,4 +1,4 @@
-import { Entity } from "@kintone-packages/domain/interfaces/models/entity";
+import { Entity } from "../../interfaces/models/entity";
 import { KintoneUserId } from "./kintoneUserId";
 
 export class KintoneUser implements Entity { 

@@ -1,4 +1,4 @@
-import { ValueObject } from "@kintone-packages/domain/interfaces/models/valueObject";
+import { ValueObject } from "../../interfaces/models/valueObject";
 
 export class KintoneDeployStatus implements ValueObject {
     static readonly PROCESSING = 'PROCESSING'

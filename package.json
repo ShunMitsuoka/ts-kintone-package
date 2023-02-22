@@ -4,11 +4,9 @@
   "description": "Kintone Plugin Develop Support Libraries",
   "author": "SHUN MITSUOKA",
   "license": "MIT",
-  "main": "index.js",
-  "types": "index.d.ts",
-  "files": [
-    "dist"
-  ],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [ "dist", "src"],
   "scripts": {
     "build": "webpack",
     "watch": "webpack -w"

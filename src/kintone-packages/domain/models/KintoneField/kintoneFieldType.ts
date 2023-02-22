@@ -1,5 +1,5 @@
-import { KintoneFieldTypeConst } from "@kintone-packages/domain/consts/kintoneFieldTypeConst";
-import { ValueObject } from "@kintone-packages/domain/interfaces/models/valueObject";
+import { KintoneFieldTypeConst } from "../../consts/kintoneFieldTypeConst";
+import { ValueObject } from "../../interfaces/models/valueObject";
 
 export class KintoneFieldType implements ValueObject {
     readonly type : string;

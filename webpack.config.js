@@ -25,8 +25,5 @@ module.exports = {
     // 記載したほうがトラブルに巻き込まれにくい。
     resolve: {
         extensions: ['.ts', '.js'],
-        alias: {
-            '@kintone-packages': path.resolve(__dirname, 'src/kintone-packages/'),
-        },
     },
 };

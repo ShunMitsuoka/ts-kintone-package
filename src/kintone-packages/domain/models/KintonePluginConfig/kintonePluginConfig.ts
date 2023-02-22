@@ -1,4 +1,4 @@
-import { Entity } from "@kintone-packages/domain/interfaces/models/entity";
+import { Entity } from "../../interfaces/models/entity";
 
 export interface KintoneConfigProps {}
 

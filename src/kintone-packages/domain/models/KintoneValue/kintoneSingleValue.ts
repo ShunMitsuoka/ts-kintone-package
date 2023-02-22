@@ -1,4 +1,3 @@
-import { KintoneMessageService } from "@kintone-packages/domain/services/kintoneMessageService";
 import { KintoneValue } from "./kintoneValue";
 
 export class KintoneSingleValue extends KintoneValue {

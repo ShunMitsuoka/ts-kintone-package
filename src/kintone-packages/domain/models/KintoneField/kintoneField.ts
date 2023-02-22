@@ -1,10 +1,10 @@
-import { Entity } from "@kintone-packages/domain/interfaces/models/entity";
 import { KintoneFieldCode } from "./kintoneFieldCode";
 import { KintoneFieldProperties } from "./kintoneFieldProperties";
 import { KintoneFieldType } from "./kintoneFieldType";
 import { KintoneValue } from "../KintoneValue/kintoneValue";
 import { KintoneArrayValue } from "../KintoneValue/kintoneArrayValue";
 import { KintoneSingleValue } from "../KintoneValue/kintoneSingleValue";
+import { Entity } from "../../interfaces/models/entity";
 
 
 export class KintoneField implements Entity {
