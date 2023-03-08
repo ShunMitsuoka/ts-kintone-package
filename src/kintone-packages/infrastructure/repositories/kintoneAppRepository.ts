@@ -23,6 +23,12 @@ export class KintoneAppRepository extends BaseKintoneRepository implements Kinto
     getCurrentAppId(): AppId {
         return KintoneJsPlugin.getCurrentAppId();
     }
+
+    async getCurrentApp(preview : boolean = false): Promise<KintoneApp> {
+        const currentAppId = KintoneJsPlugin.getCurrentAppId();
+        return this.getByAppId(currentAppId, preview);
+    }
+
     async getByAppId(appId: AppId, preview : boolean = false): Promise<KintoneApp> {
         const res = await this.kintoneRestAppApi.get(appId)
         .catch((error) => {
@@ -38,6 +44,7 @@ export class KintoneAppRepository extends BaseKintoneRepository implements Kinto
         app.setFields(new KintoneFields(fieldsRes));
         return app;
     }
+    
     async getAll(result: KintoneApp[] = [], _params?: any): Promise<KintoneApp[]> {
         _params = _params ? _params : {};
         // limit設定

@@ -5,6 +5,7 @@ import { KintoneDeployStatus } from "../../models/KintoneDeployStatus/kintoneDep
 
 export interface KintoneAppRepositoryInterface{
     getCurrentAppId() : AppId;
+    getCurrentApp(preview? : boolean): Promise<KintoneApp>;
     getByAppId(appId : AppId, preview? : boolean) : Promise<KintoneApp>;
     getAll() : Promise<Array<KintoneApp>>;
     create(app : KintoneApp) : Promise<KintoneApp>;
