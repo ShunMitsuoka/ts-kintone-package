@@ -9,7 +9,6 @@ export { KintoneFieldPropertyOption } from "./kintone-packages/domain/models/Kin
 export { KintoneFieldType } from "./kintone-packages/domain/models/KintoneField/kintoneFieldType";
 export { KintoneDefaultFields } from "./kintone-packages/domain/models/KintoneFields/kintoneDefaultFields";
 export { KintoneFields } from "./kintone-packages/domain/models/KintoneFields/kintoneFields";
-export { KintonePluginConfig } from "./kintone-packages/domain/models/KintonePluginConfig/kintonePluginConfig";
 export { PluginId } from "./kintone-packages/domain/models/KintonePluginId/pluginId";
 export { KintoneRecord } from "./kintone-packages/domain/models/KintoneRecord/kintoneRecord";
 export { KintoneRecordId } from "./kintone-packages/domain/models/KintoneRecord/kintoneRecordId";
