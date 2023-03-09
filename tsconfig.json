@@ -1,19 +1,21 @@
 {
     "compilerOptions": {
+        "baseUrl": "./src",
+        "target": "ESNext",
+        "lib": [
+            "DOM"
+        ],
+        "module": "ESNext",
+        "moduleResolution": "Node",
+        "declaration": true,
+        "outDir": "dist",
         "jsx": "react",
         "typeRoots": [
             "node_modules/@types",
             "src/kintone-packages/types/kintone.d.tsx"
         ],
-        "baseUrl": "./src",
         "noImplicitAny": false,
         "allowSyntheticDefaultImports": true,
-        "lib": [
-            "ES2021",
-            "DOM"
-        ],
-        "declaration": true,
-        "outDir": "dist",
         "sourceMap": true,
         "strict": true,
     },

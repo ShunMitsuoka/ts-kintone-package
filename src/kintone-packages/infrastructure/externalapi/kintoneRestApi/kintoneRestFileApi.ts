@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from "../../../../../node_modules/axios/index";
 
 export class KintoneRestFileApi {
     public upload(file: File) : Promise<any>{

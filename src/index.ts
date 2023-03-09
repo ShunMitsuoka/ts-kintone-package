@@ -18,6 +18,7 @@ export { KintoneUserId } from "./kintone-packages/domain/models/KintoneUser/kint
 export { KintoneArrayValue } from "./kintone-packages/domain/models/KintoneValue/kintoneArrayValue";
 export { KintoneSingleValue } from "./kintone-packages/domain/models/KintoneValue/kintoneSingleValue";
 export { KintoneAppDeployService } from "./kintone-packages/domain/services/kintoneAppDeployService";
+
 export { KintoneAppRepository } from "./kintone-packages/infrastructure/repositories/kintoneAppRepository";
 export { KintoneFieldsRepository } from "./kintone-packages/infrastructure/repositories/kintoneFieldsRepository";
 export { KintonePluginConfigRepository } from "./kintone-packages/infrastructure/repositories/kintonePluginConfigRepository";
