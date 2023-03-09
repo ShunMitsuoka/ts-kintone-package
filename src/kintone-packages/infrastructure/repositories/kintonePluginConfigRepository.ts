@@ -5,18 +5,26 @@ import { KintoneJsPlugin } from "../externalapi/kintoneJsApi/kintoneJsPlugin";
 
 export class KintonePluginConfigRepository implements KintonePluginConfigRepositoryInterface{
 
-    public get(pluginId : PluginId) : any {
+    public get(pluginId : PluginId) : Object {
         try {
-            const config = KintoneJsPlugin.getConfig(pluginId.id);
+            let config = {};
+            const saveDate = KintoneJsPlugin.getConfig(pluginId.id);
+            Object.keys(saveDate).forEach(function (key) {
+                config[key] = JSON.parse(saveDate[key]);
+            });
             return config;
         } catch (error) {
             return {};
         }
     }
     
-    public set(config:any) : Promise<any> {
+    public set(config:Object) : Promise<Object> {
+        let saveDate = {};
+        Object.keys(config).forEach(function (key) {
+            saveDate[key] = JSON.stringify(config[key]);
+        });
         return new Promise((resolve) => {
-            KintoneJsPlugin.setConfig(config, () => {
+            KintoneJsPlugin.setConfig(saveDate, () => {
                 resolve(config);
             });
         });

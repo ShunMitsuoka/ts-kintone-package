@@ -2,7 +2,7 @@ import { PluginId } from "../../models/KintonePluginId/pluginId";
 
 
 export interface KintonePluginConfigRepositoryInterface{
-    get(pluginId : PluginId) : any;
-    set(config:any) : Promise<any>;
+    get(pluginId : PluginId) : Object;
+    set(config:Object) : Promise<Object>;
     deleteAll() : Promise<void>;
 } 

@@ -4,7 +4,7 @@ import { KintoneUserId } from "../../../domain/models/KintoneUser/kintoneUserId"
 
 
 export class KintoneJsPlugin {
-    public static getConfig(pluginId : string) : any{
+    public static getConfig(pluginId : string) : Object{
         return kintone.plugin.app.getConfig(pluginId);
     }
 
