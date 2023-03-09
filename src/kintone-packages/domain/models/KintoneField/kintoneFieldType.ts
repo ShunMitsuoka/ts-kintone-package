@@ -23,4 +23,15 @@ export class KintoneFieldType implements ValueObject {
         }
         return false;
     }
+
+    public isObjectValueFieldType() : boolean{
+        switch (this.type) {
+            case KintoneFieldTypeConst.CREATOR.type:
+            case KintoneFieldTypeConst.MODIFIER.type:
+                return true;
+            default:
+                break;
+        }
+        return false;
+    }
 }

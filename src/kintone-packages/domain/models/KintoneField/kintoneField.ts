@@ -5,6 +5,7 @@ import { KintoneValue } from "../KintoneValue/kintoneValue";
 import { KintoneArrayValue } from "../KintoneValue/kintoneArrayValue";
 import { KintoneSingleValue } from "../KintoneValue/kintoneSingleValue";
 import { Entity } from "../../interfaces/models/entity";
+import { KintoneObjectValue } from "../KintoneValue/kintoneObjectValue";
 
 
 export class KintoneField implements Entity {
@@ -30,6 +31,8 @@ export class KintoneField implements Entity {
         }
         if(this.properties.type.isArrayValueFieldType()){
             this.value =  new KintoneArrayValue(value as string[]);
+        }else if(this.properties.type.isObjectValueFieldType()){
+            this.value =  new KintoneObjectValue(value as Object);
         }else{
             this.value =  new KintoneSingleValue(value as string);
         }
@@ -51,7 +54,7 @@ export class KintoneField implements Entity {
         return this.properties.getType();
     }
 
-    public getValue() : string | string[]{
+    public getValue() : string | string[] | Object{
         if(!this.properties.type){
             throw new Error("フィールドの値を取得する場合、フィールドタイプを設定してください。");
         }
