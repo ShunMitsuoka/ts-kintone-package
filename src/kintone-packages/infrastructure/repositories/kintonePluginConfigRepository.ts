@@ -1,6 +1,5 @@
 
 import { KintonePluginConfigRepositoryInterface } from "../../domain/interfaces/repositories/kintonePluginConfigRepositoryInterface";
-import { KintonePluginConfig } from "../../domain/models/KintonePluginConfig/kintonePluginConfig";
 import { PluginId } from "../../domain/models/KintonePluginId/pluginId";
 import { KintoneJsPlugin } from "../externalapi/kintoneJsApi/kintoneJsPlugin";
 

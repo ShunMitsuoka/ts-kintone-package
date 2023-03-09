@@ -1,4 +1,3 @@
-import { KintonePluginConfig } from "../../models/KintonePluginConfig/kintonePluginConfig";
 import { PluginId } from "../../models/KintonePluginId/pluginId";
 
 
