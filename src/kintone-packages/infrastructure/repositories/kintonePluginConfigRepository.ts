@@ -6,20 +6,19 @@ import { KintoneJsPlugin } from "../externalapi/kintoneJsApi/kintoneJsPlugin";
 
 export class KintonePluginConfigRepository implements KintonePluginConfigRepositoryInterface{
 
-    public get(pluginId : PluginId) : KintonePluginConfig {
+    public get(pluginId : PluginId) : any {
         try {
             const config = KintoneJsPlugin.getConfig(pluginId.id);
-            const kintoneConfig = new KintonePluginConfig(config);
-            return kintoneConfig;
+            return config;
         } catch (error) {
-            return KintonePluginConfig.getDefalutConfig();
+            return {};
         }
     }
     
-    public set(kintoneConfig:KintonePluginConfig) : Promise<KintonePluginConfig> {
+    public set(config:any) : Promise<any> {
         return new Promise((resolve) => {
-            KintoneJsPlugin.setConfig(kintoneConfig.getConfig(), () => {
-                resolve(kintoneConfig);
+            KintoneJsPlugin.setConfig(config, () => {
+                resolve(config);
             });
         });
     }

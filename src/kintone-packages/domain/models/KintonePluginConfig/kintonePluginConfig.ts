@@ -1,15 +1,13 @@
 import { Entity } from "../../interfaces/models/entity";
 
-export interface KintoneConfigProps {}
-
 export class KintonePluginConfig implements Entity {
-    private config : KintoneConfigProps;
+    private config : any;
 
-    public constructor(config : KintoneConfigProps){
+    public constructor(config : any){
         this.config = config;
     }
 
-    public getConfig() : KintoneConfigProps{
+    public getConfig() : any{
         return this.config;
     }
 
@@ -17,7 +15,7 @@ export class KintonePluginConfig implements Entity {
         return new KintonePluginConfig({});
     }
 
-    static getSize(config : KintoneConfigProps) : number{
+    static getSize(config : any) : number{
         let size = 0;
         const kb = 1024;
         if(config){
