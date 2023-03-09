@@ -55,7 +55,10 @@ export class KintoneFieldsRepository extends BaseKintoneRepository  implements K
                                 required : property.required,
                                 unique : property.unique,
                                 options : options,
-                                defaultValue : fieldType.isArrayValueFieldType() ? new KintoneArrayValue(property.defaultValue) : new KintoneSingleValue(property.defaultValue),
+                                defaultValue : property.defaultValue ? 
+                                    (fieldType.isArrayValueFieldType() ? new KintoneArrayValue(property.defaultValue) : new KintoneSingleValue(property.defaultValue)) 
+                                    : undefined
+                                ,
                             })
                         )
                     );
