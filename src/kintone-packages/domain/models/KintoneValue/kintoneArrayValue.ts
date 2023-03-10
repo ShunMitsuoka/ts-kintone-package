@@ -6,9 +6,6 @@ export class KintoneArrayValue extends KintoneValue {
         if (!Array.isArray(value)) {
             throw new Error("valueはArray型である必要があります。");
         }
-        if (value.length < 1) {
-            throw new Error("配列型のvalueは1つ以上の要素を持つ必要があります。");
-        }
         super(value);
     }
 
@@ -17,6 +14,6 @@ export class KintoneArrayValue extends KintoneValue {
     }
 
     public isArray() : boolean{
-        return false
+        return true
     }
 }

@@ -7,7 +7,8 @@ export abstract class KintoneValue implements ValueObject {
         this.value = value;
     }
 
-    abstract getValue() : string | string[] | Object;
+    abstract getValue() : string | string[] | Object | null;
+    
     isArray() : boolean {
         return false;
     };

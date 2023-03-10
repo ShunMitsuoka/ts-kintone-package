@@ -6,17 +6,10 @@ export class KintoneSingleValue extends KintoneValue {
         if (typeof value !== "string") {
             throw new Error("valueはstring型である必要があります。");
         }
-        if (value === "") {
-            throw new Error("string型のvalueに空文字は設定できません");
-        }
         super(value);
     }
 
     public getValue() : string{
         return this.value
-    }
-
-    public isArray() : boolean{
-        return true
     }
 }

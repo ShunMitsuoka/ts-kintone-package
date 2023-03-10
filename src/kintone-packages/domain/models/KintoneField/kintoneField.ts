@@ -6,6 +6,7 @@ import { KintoneArrayValue } from "../KintoneValue/kintoneArrayValue";
 import { KintoneSingleValue } from "../KintoneValue/kintoneSingleValue";
 import { Entity } from "../../interfaces/models/entity";
 import { KintoneObjectValue } from "../KintoneValue/kintoneObjectValue";
+import { KintoneNullValue } from "../KintoneValue/kintoneNullValue";
 
 
 export class KintoneField implements Entity {
@@ -25,17 +26,23 @@ export class KintoneField implements Entity {
         return this.fieldCode.fieldCode;
     }
 
-    public setValue(value : string | string[]){
+    public setValue(value : string | string[] | Object | null){
         if(!this.properties.type){
             throw new Error("フィールドの値を設定する場合、フィールドタイプを設定してください。");
         }
         if(this.properties.type.isArrayValueFieldType()){
             this.value =  new KintoneArrayValue(value as string[]);
-        }else if(this.properties.type.isObjectValueFieldType()){
-            this.value =  new KintoneObjectValue(value as Object);
-        }else{
-            this.value =  new KintoneSingleValue(value as string);
+            return;
         }
+        if(this.properties.type.isObjectValueFieldType()){
+            this.value =  new KintoneObjectValue(value as Object);
+            return;
+        }
+        if(value == null){
+            this.value =  new KintoneNullValue(value as null);
+            return;
+        }
+        this.value =  new KintoneSingleValue(value as string);
     }
 
     public clearValue(){
@@ -54,7 +61,7 @@ export class KintoneField implements Entity {
         return this.properties.getType();
     }
 
-    public getValue() : string | string[] | Object{
+    public getValue() : string | string[] | Object | null{
         if(!this.properties.type){
             throw new Error("フィールドの値を取得する場合、フィールドタイプを設定してください。");
         }
