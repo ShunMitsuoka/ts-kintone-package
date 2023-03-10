@@ -14,6 +14,10 @@ export class KintoneViews implements ValueObject {
         this.revision = revision ? revision : undefined;
     }
 
+    getViews() : KintoneView[]{
+        return this.views;
+    }
+
     getView(viewId : number) : KintoneView{
         for (let i = 0; i < this.views.length; i++) {
             const view = this.views[i];
@@ -22,6 +26,5 @@ export class KintoneViews implements ValueObject {
             }
         }
         throw new Error("存在しないviewIdが指定されました。");
-        
     }
 }
