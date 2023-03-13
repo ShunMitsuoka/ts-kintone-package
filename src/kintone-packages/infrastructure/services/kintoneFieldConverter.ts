@@ -46,6 +46,11 @@ export class KintoneFieldConverter{
         return options;
     }
 
+    /**
+     * ルックアップを作成
+     * @param property 
+     * @returns 
+     */
     static makeLookUp(property : any) : LookUpOption | undefined{
         if (!property.lookup) {
             return undefined

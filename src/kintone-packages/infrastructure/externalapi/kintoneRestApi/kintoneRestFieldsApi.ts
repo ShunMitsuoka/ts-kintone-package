@@ -2,36 +2,16 @@ import { AppId } from "../../../domain/models/KintoneApp/appId";
 import { KintoneApp } from "../../../domain/models/KintoneApp/kintoneApp";
 import { KintoneField } from "../../../domain/models/KintoneField/kintoneField";
 import { KintoneFieldPropertyOption } from "../../../domain/models/KintoneField/kintoneFieldPropertyOption";
+import { KintoneRestFieldApiConverter } from "../../services/kintoneRestFieldApiConverter";
 
 
 export class KintoneRestFieldsApi {
     public create(app : KintoneApp) : Promise<any>{
         const properties = {};
-
         const fields: Map<string, KintoneField> = app.getFieldsMap();
         fields.forEach((field: KintoneField, key: string) => {
-            const options = {};
-            const appOptions = field.getFieldProperties().options;
-            if(appOptions && appOptions.size > 0){
-                appOptions.forEach((appOption: KintoneFieldPropertyOption, optionKey: number) => {
-                    options[appOption.label] = {
-                        "label": appOption.label,
-                        "index": appOption.index
-                    }
-                });
-            }
-            properties[field.getFieldCode()] = {
-                "type": field.getFieldProperties().type.type,
-                "code": field.getFieldCode(),
-                "label": field.getFieldProperties().label,
-                "noLabel": field.getFieldProperties().noLabel,
-                "required": field.getFieldProperties().required,
-                "unique": field.getFieldProperties().unique,
-                "options": options,
-                "defaultValue": field.getFieldProperties().getDefaultValue(),
-            }
+            properties[field.getFieldCode()] = KintoneRestFieldApiConverter.makeProperties(field);
         });
-
         const params = {
             "app": app.getAppId().id,
             "properties": properties,
@@ -66,37 +46,16 @@ export class KintoneRestFieldsApi {
      */
     public update(app : KintoneApp, updatedFieldCodeMap? : Map<string, string>) : Promise<any>{
         const properties = {};
-
         const fields: Map<string, KintoneField> = app.getFieldsMap();
         fields.forEach((field: KintoneField, key: string) => {
-            const options = {};
-            const appOptions = field.getFieldProperties().options;
-            if(appOptions && appOptions.size > 0){
-                appOptions.forEach((appOption: KintoneFieldPropertyOption, optionKey: number) => {
-                    options[appOption.label] = {
-                        "label": appOption.label,
-                        "index": appOption.index
-                    }
-                });
-            }
             let targetFiledCode = field.getFieldCode();
             let newFieldCode = field.getFieldCode();
             if (updatedFieldCodeMap && updatedFieldCodeMap.has(newFieldCode)) {
                 const oldFieldCode = updatedFieldCodeMap.get(newFieldCode)!;
                 targetFiledCode = oldFieldCode;
             }
-            properties[targetFiledCode] = {
-                "type": field.getFieldProperties().type.type,
-                "code": field.getFieldCode(),
-                "label": field.getFieldProperties().label,
-                "noLabel": field.getFieldProperties().noLabel,
-                "required": field.getFieldProperties().required,
-                "unique": field.getFieldProperties().unique,
-                "options": options,
-                "defaultValue": field.getFieldProperties().getDefaultValue(),
-            }
+            properties[targetFiledCode] = KintoneRestFieldApiConverter.makeProperties(field);
         });
-
         const params = {
             "app": app.getAppId().id,
             "properties": properties,
