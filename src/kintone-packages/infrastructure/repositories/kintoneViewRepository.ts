@@ -42,7 +42,7 @@ export class KintoneViewRepository extends BaseKintoneRepository implements Kint
             }
         })
         .catch((error) => {
-            this.catchKintoneApiError(error, 'FAILED_TO_GET_ALL_APPS');
+            this.catchKintoneApiError(error);
         });
         return new KintoneViews(kintoneViews, revision);
     }

@@ -1,5 +1,5 @@
 export class BaseKintoneRepository {
-    protected catchKintoneApiError(error, messageKey : string){
+    protected catchKintoneApiError(error){
         throw new Error(error);
     }
 }

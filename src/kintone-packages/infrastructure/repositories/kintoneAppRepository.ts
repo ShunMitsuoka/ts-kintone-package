@@ -32,7 +32,7 @@ export class KintoneAppRepository extends BaseKintoneRepository implements Kinto
     async getByAppId(appId: AppId, preview : boolean = false): Promise<KintoneApp> {
         const res = await this.kintoneRestAppApi.get(appId)
         .catch((error) => {
-            this.catchKintoneApiError(error, 'FAILED_TO_GET_APP_INFO');
+            this.catchKintoneApiError(error);
         });
         const app = new KintoneApp(
             new AppId(res.appId),
@@ -74,7 +74,7 @@ export class KintoneAppRepository extends BaseKintoneRepository implements Kinto
             });
         })
         .catch((error) => {
-            this.catchKintoneApiError(error, 'FAILED_TO_GET_ALL_APPS');
+            this.catchKintoneApiError(error);
         });
         Array.prototype.push.apply(result, kintoneApps);
         if(kintoneApps.length === limit){

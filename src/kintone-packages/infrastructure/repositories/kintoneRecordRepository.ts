@@ -56,7 +56,7 @@ export class KintoneRecordRepository extends BaseKintoneRepository implements Ki
                 }
             },
             (error) => {
-                this.catchKintoneApiError(error, 'FAILED_TO_GET_ALL_RECORD');
+                this.catchKintoneApiError(error);
             }
         );
         result = result || [];
@@ -76,7 +76,7 @@ export class KintoneRecordRepository extends BaseKintoneRepository implements Ki
             response = resp;
         })
         .catch((error) => {
-            this.catchKintoneApiError(error, 'FAILED_TO_CRAETE_RECORD');
+            this.catchKintoneApiError(error);
         });
         record.setRecordId(new KintoneRecordId(response.id));
         return true;
@@ -92,7 +92,7 @@ export class KintoneRecordRepository extends BaseKintoneRepository implements Ki
                 response = resp;
             })
             .catch((error) => {
-                this.catchKintoneApiError(error, 'FAILED_TO_CRAETE_RECORD');
+                this.catchKintoneApiError(error);
             });
             const ids = response.ids;
             for (let j = 0; j < ids.length; j++) {
@@ -109,7 +109,7 @@ export class KintoneRecordRepository extends BaseKintoneRepository implements Ki
             response = resp;
         })
         .catch((error) => {
-            this.catchKintoneApiError(error, 'FAILED_TO_UPDATE_RECORD');
+            this.catchKintoneApiError(error);
         });
         return true;
     }
@@ -125,7 +125,7 @@ export class KintoneRecordRepository extends BaseKintoneRepository implements Ki
             response = resp;
         })
         .catch((error) => {
-            this.catchKintoneApiError(error, 'FAILED_TO_UPDATE_RECORD');
+            this.catchKintoneApiError(error);
         });
         return true;
     }
@@ -137,7 +137,7 @@ export class KintoneRecordRepository extends BaseKintoneRepository implements Ki
                 result = true;
         })
         .catch((error) => {
-                this.catchKintoneApiError(error, 'FAILED_TO_DELETE_RECORD');
+            this.catchKintoneApiError(error);
             }
         );
         return result;

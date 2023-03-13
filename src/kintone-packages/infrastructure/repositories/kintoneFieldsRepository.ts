@@ -50,7 +50,7 @@ export class KintoneFieldsRepository extends BaseKintoneRepository  implements K
                 }
             },
             (error) => {
-                this.catchKintoneApiError(error, 'FAILED_TO_GET_ALL_FIELDS');
+                this.catchKintoneApiError(error);
             }
         );
         return result;
@@ -62,7 +62,7 @@ export class KintoneFieldsRepository extends BaseKintoneRepository  implements K
                 result = true;
             },
             (error) => {
-                this.catchKintoneApiError(error, 'FAILED_TO_CRAETE_FIELD');
+                this.catchKintoneApiError(error);
             }
         );
         return result;
@@ -74,7 +74,7 @@ export class KintoneFieldsRepository extends BaseKintoneRepository  implements K
                 result = true;
             },
             (error) => {
-                this.catchKintoneApiError(error, 'FAILED_TO_UPDATE_FIELD');
+                this.catchKintoneApiError(error);
             }
         );
         return result;
@@ -86,7 +86,7 @@ export class KintoneFieldsRepository extends BaseKintoneRepository  implements K
                 result = true;
             },
             (error) => {
-                this.catchKintoneApiError(error, 'FAILED_TO_DELETE_FIELD');
+                this.catchKintoneApiError(error);
             }
         );
         return result;
