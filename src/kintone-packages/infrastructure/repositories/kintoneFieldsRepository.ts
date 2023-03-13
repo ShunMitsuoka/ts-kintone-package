@@ -10,6 +10,7 @@ import { KintoneFieldType } from "../../domain/models/KintoneField/kintoneFieldT
 import { KintoneArrayValue } from "../../domain/models/KintoneValue/kintoneArrayValue";
 import { KintoneSingleValue } from "../../domain/models/KintoneValue/kintoneSingleValue";
 import { KintoneRestFieldsApi } from "../externalapi/kintoneRestApi/kintoneRestFieldsApi";
+import { KintoneFieldConverter } from "../services/kintoneFieldConverter";
 import { BaseKintoneRepository } from "./baseKintoneRepository";
 
 export class KintoneFieldsRepository extends BaseKintoneRepository  implements KintoneFieldRepositoryInterface{
@@ -31,34 +32,18 @@ export class KintoneFieldsRepository extends BaseKintoneRepository  implements K
                 const properties = resp.properties;
                 for (const key in properties) {
                     const property = properties[key];
-                    const options = new Map<number,KintoneFieldPropertyOption>();
-                    if(property.options){
-                        let j = 0;
-                        for (const key in property.options) {
-                            const option = property.options[key];
-                            options.set(j, new KintoneFieldPropertyOption(
-                                    key,
-                                    option.label,
-                                    option.index,
-                                ));
-                            j++;
-                        }
-                    }
-                    const fieldType = new KintoneFieldType(property.type);
                     result.set(property.code, 
                         new KintoneField(
                             new KintoneFieldCode(property.code), 
                             new KintoneFieldProperties({
                                 label : property.label,
-                                type : fieldType,
+                                type : new KintoneFieldType(property.type),
                                 noLabel : property.noLabel,
                                 required : property.required,
                                 unique : property.unique,
-                                options : options,
-                                defaultValue : property.defaultValue ? 
-                                    (fieldType.isArrayValueFieldType() ? new KintoneArrayValue(property.defaultValue) : new KintoneSingleValue(property.defaultValue)) 
-                                    : undefined
-                                ,
+                                options : KintoneFieldConverter.makeOptions(property),
+                                defaultValue : KintoneFieldConverter.makeDefaultValue(property),
+                                lookUp : KintoneFieldConverter.makeLookUp(property)
                             })
                         )
                     );

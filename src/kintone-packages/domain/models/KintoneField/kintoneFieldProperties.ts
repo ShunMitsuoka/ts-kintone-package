@@ -2,6 +2,7 @@ import { KintoneFieldPropertyOption } from "./kintoneFieldPropertyOption";
 import { KintoneFieldType } from "./kintoneFieldType";
 import { KintoneValue } from "../KintoneValue/kintoneValue";
 import { ValueObject } from "../../interfaces/models/valueObject";
+import { LookUpOption } from "./FieldOptions/lookUpOption";
 
 
 interface FieldPropertiesProps {
@@ -12,6 +13,7 @@ interface FieldPropertiesProps {
     unique? : boolean,
     options? : Map<number,KintoneFieldPropertyOption>,
     defaultValue? : KintoneValue,
+    lookUp? : LookUpOption,
 }
 
 export class KintoneFieldProperties implements ValueObject {
@@ -23,6 +25,7 @@ export class KintoneFieldProperties implements ValueObject {
     readonly unique? : boolean;
     readonly options?: Map<number,KintoneFieldPropertyOption>;
     readonly defaultValue? : KintoneValue;
+    readonly lookUp? : LookUpOption;
 
     public constructor({
             label,
@@ -32,6 +35,7 @@ export class KintoneFieldProperties implements ValueObject {
             unique = false,
             options,
             defaultValue,
+            lookUp,
     } : FieldPropertiesProps){
         this.label = label;
         this.type = type;
@@ -40,6 +44,7 @@ export class KintoneFieldProperties implements ValueObject {
         this.unique = unique;
         this.options = options;
         this.defaultValue = defaultValue;
+        this.lookUp = lookUp;
     }
 
     public getLabel() : string{
