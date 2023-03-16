@@ -40,7 +40,8 @@ export class KintoneFieldsRepository extends BaseKintoneRepository  implements K
                                 unique : property.unique,
                                 options : KintoneFieldConverter.makeOptions(property),
                                 defaultValue : KintoneFieldConverter.makeDefaultValue(property),
-                                lookUp : KintoneFieldConverter.makeLookUp(property)
+                                lookUp : KintoneFieldConverter.makeLookUp(property),
+                                referenceTable : KintoneFieldConverter.makeReferenceTable(property)
                             })
                         )
                     );
