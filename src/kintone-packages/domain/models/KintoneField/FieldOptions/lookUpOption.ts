@@ -30,15 +30,24 @@ export class LookUpOption implements ValueObject {
     private filterCond? : string;
     private sort? : string;
 
-    constructor(props : LookUpOptionProps){
-        this.appId = props.appId;
-        this.relatedKeyField = props.relatedKeyField;
-        this.relatedKeyFieldType = props.relatedKeyFieldType;
-        this.appCode = props.appCode;
-        this.fieldMappings = props.fieldMappings;
-        this.lookupPickerFields = props.lookupPickerFields;
-        this.filterCond = props.filterCond;
-        this.sort = props.sort;
+    constructor({
+        appId,
+        relatedKeyField,
+        relatedKeyFieldType,
+        appCode,
+        fieldMappings = [],
+        lookupPickerFields = [],
+        filterCond,
+        sort,
+    } : LookUpOptionProps){
+        this.appId = appId;
+        this.relatedKeyField = relatedKeyField;
+        this.relatedKeyFieldType = relatedKeyFieldType;
+        this.appCode = appCode;
+        this.fieldMappings = fieldMappings;
+        this.lookupPickerFields = lookupPickerFields;
+        this.filterCond = filterCond;
+        this.sort = sort;
     }
 
     getFieldMappings() : FieldMapping[]{
