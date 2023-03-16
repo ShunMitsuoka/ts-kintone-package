@@ -5,7 +5,7 @@ import { KintoneJsPlugin } from "../externalapi/kintoneJsApi/kintoneJsPlugin";
 
 export class KintonePluginConfigRepository implements KintonePluginConfigRepositoryInterface{
 
-    public get(pluginId : PluginId) : Object {
+    public get(pluginId : PluginId) : any {
         try {
             let config = {};
             const saveDate = KintoneJsPlugin.getConfig(pluginId.id);
@@ -18,10 +18,14 @@ export class KintonePluginConfigRepository implements KintonePluginConfigReposit
         }
     }
     
-    public set(config:Object) : Promise<Object> {
+    public set(config:Object) : Promise<any> {
         let saveDate = {};
         Object.keys(config).forEach(function (key) {
-            saveDate[key] = JSON.stringify(config[key]);
+            if (typeof config[key] === "string" || config[key] instanceof String) {
+                saveDate[key] = config[key];
+            }else{
+                saveDate[key] = JSON.stringify(config[key]);
+            }
         });
         return new Promise((resolve) => {
             KintoneJsPlugin.setConfig(saveDate, () => {

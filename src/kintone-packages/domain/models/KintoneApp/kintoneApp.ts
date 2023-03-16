@@ -45,7 +45,7 @@ export class KintoneApp implements Entity {
         return this.revision;
     }
 
-    public isThisApp(targetAppId : AppId){
+    public isThisAppId(targetAppId : AppId){
         if(!this._appId){
             throw new Error("appIdが設定されていません");
         }
