@@ -31,7 +31,7 @@ export class KintoneField implements Entity {
             throw new Error("フィールドの値を設定する場合、フィールドタイプを設定してください。");
         }
         if(this.properties.type.isArrayValueFieldType()){
-            this.value =  new KintoneArrayValue(value as string[]);
+            this.value =  new KintoneArrayValue(KintoneSingleValue.checkSingleValue(value) ? [value as string] : value as string[] );
             return;
         }
         if(this.properties.type.isObjectValueFieldType()){

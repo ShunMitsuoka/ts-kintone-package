@@ -12,4 +12,8 @@ export class KintoneSingleValue extends KintoneValue {
     public getValue() : string{
         return this.value
     }
+
+    static checkSingleValue(value : any) : boolean{
+        return typeof value === "string" || value instanceof String
+    }
 }
