@@ -1,3 +1,4 @@
+import { KintoneFieldTypeConst } from "../../domain/consts/kintoneFieldTypeConst";
 import { AppId } from "../../domain/models/KintoneApp/appId";
 import { FieldMapping, LookUpOption } from "../../domain/models/KintoneField/FieldOptions/lookUpOption";
 import { ReferenceTable } from "../../domain/models/KintoneField/FieldOptions/referenceTable";
@@ -23,6 +24,18 @@ export class KintoneFieldConverter{
             return undefined
         }
         return fieldType.isArrayValueFieldType() ? new KintoneArrayValue(property.defaultValue) : new KintoneSingleValue(property.defaultValue);
+    }
+
+    /**
+     * フィールドタイプを生成
+     * @param property 
+     * @returns 
+     */
+     static makeFieldType(property : any) : KintoneFieldType{
+        if (property.lookup) {
+            return KintoneFieldTypeConst.LOOK_UP;
+        }
+        return new KintoneFieldType(property.type);
     }
 
     /**

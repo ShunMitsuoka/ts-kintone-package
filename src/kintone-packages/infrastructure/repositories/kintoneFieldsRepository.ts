@@ -5,7 +5,6 @@ import { KintoneApp } from "../../domain/models/KintoneApp/kintoneApp";
 import { KintoneField } from "../../domain/models/KintoneField/kintoneField";
 import { KintoneFieldCode } from "../../domain/models/KintoneField/kintoneFieldCode";
 import { KintoneFieldProperties } from "../../domain/models/KintoneField/kintoneFieldProperties";
-import { KintoneFieldType } from "../../domain/models/KintoneField/kintoneFieldType";
 import { KintoneRestFieldsApi } from "../externalapi/kintoneRestApi/kintoneRestFieldsApi";
 import { KintoneFieldConverter } from "../services/kintoneFieldConverter";
 import { BaseKintoneRepository } from "./baseKintoneRepository";
@@ -34,7 +33,7 @@ export class KintoneFieldsRepository extends BaseKintoneRepository  implements K
                             new KintoneFieldCode(property.code), 
                             new KintoneFieldProperties({
                                 label : property.label,
-                                type : new KintoneFieldType(property.type),
+                                type : KintoneFieldConverter.makeFieldType(property),
                                 noLabel : property.noLabel,
                                 required : property.required,
                                 unique : property.unique,

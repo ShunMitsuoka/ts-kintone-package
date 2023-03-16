@@ -1,6 +1,7 @@
 import { ValueObject } from "../../../interfaces/models/valueObject";
 import { AppId } from "../../KintoneApp/appId";
 import { KintoneFieldCode } from "../kintoneFieldCode";
+import { KintoneFieldType } from "../kintoneFieldType";
 
 export type FieldMapping = {
     field : KintoneFieldCode,
@@ -10,6 +11,7 @@ export type FieldMapping = {
 export interface LookUpOptionProps {
     appId : AppId,
     relatedKeyField : KintoneFieldCode,
+    relatedKeyFieldType? : KintoneFieldType,
     appCode? : string,
     fieldMappings : FieldMapping[],
     lookupPickerFields : KintoneFieldCode[],
@@ -21,6 +23,7 @@ export class LookUpOption implements ValueObject {
 
     readonly appId : AppId;
     readonly relatedKeyField : KintoneFieldCode;
+    readonly relatedKeyFieldType? : KintoneFieldType;
     readonly appCode? : string;
     private fieldMappings : FieldMapping[];
     private lookupPickerFields : KintoneFieldCode[];
@@ -30,6 +33,7 @@ export class LookUpOption implements ValueObject {
     constructor(props : LookUpOptionProps){
         this.appId = props.appId;
         this.relatedKeyField = props.relatedKeyField;
+        this.relatedKeyFieldType = props.relatedKeyFieldType;
         this.appCode = props.appCode;
         this.fieldMappings = props.fieldMappings;
         this.lookupPickerFields = props.lookupPickerFields;

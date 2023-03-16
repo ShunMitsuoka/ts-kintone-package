@@ -1,3 +1,4 @@
+import { KintoneFieldTypeConst } from "../../domain/consts/kintoneFieldTypeConst";
 import { KintoneField } from "../../domain/models/KintoneField/kintoneField";
 import { KintoneFieldPropertyOption } from "../../domain/models/KintoneField/kintoneFieldPropertyOption";
 
@@ -10,7 +11,7 @@ export class KintoneRestFieldApiConverter{
      */
     static makeProperties(field: KintoneField) : any{
         return {
-            "type": field.getFieldProperties().type.type,
+            "type": KintoneRestFieldApiConverter.makeType(field),
             "code": field.getFieldCode(),
             "label": field.getFieldProperties().label,
             "noLabel": field.getFieldProperties().noLabel,
@@ -21,6 +22,22 @@ export class KintoneRestFieldApiConverter{
             "lookup": KintoneRestFieldApiConverter.makeLookUp(field),
             "referenceTable" : KintoneRestFieldApiConverter.makeReferenceTable(field)
         }
+    }
+
+    /**
+     * FiledTypeを作成
+     * @param property 
+     * @returns 
+     */
+    static makeType(field: KintoneField) : string{
+        if(field.getFieldType().type == KintoneFieldTypeConst.LOOK_UP.type){
+            if(field.getFieldProperties().lookUp == undefined || field.getFieldProperties().lookUp?.relatedKeyFieldType == undefined){
+                throw new Error("LookUpフィールドを追加・更新する場合は、対処フィールドのフィールドタイプを設定する必要があります。");
+            }
+            const lookUp = field.getFieldProperties().lookUp!;
+            return lookUp.relatedKeyFieldType!.type;
+        }
+        return field.getFieldProperties().type.type;
     }
 
     /**

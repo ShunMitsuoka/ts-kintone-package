@@ -29,4 +29,5 @@ export class KintoneFieldTypeConst {
     static readonly UPDATED_TIME:KintoneFieldType = new KintoneFieldType('UPDATED_TIME');
     static readonly STATUS:KintoneFieldType = new KintoneFieldType('STATUS');
     static readonly CATEGORY:KintoneFieldType = new KintoneFieldType('CATEGORY');
+    static readonly LOOK_UP:KintoneFieldType = new KintoneFieldType('LOOK_UP');
 }
