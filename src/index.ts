@@ -8,6 +8,8 @@ export { KintoneFieldCode } from "./kintone-packages/domain/models/KintoneField/
 export { KintoneFieldPropertyOption } from "./kintone-packages/domain/models/KintoneField/kintoneFieldPropertyOption";
 export { KintoneFieldType } from "./kintone-packages/domain/models/KintoneField/kintoneFieldType";
 export { KintoneDefaultFields } from "./kintone-packages/domain/models/KintoneFields/kintoneDefaultFields";
+export { LookUpOption } from "./kintone-packages/domain/models/KintoneField/FieldOptions/lookUpOption";
+export { ReferenceTable } from "./kintone-packages/domain/models/KintoneField/FieldOptions/referenceTable";
 export { KintoneFields } from "./kintone-packages/domain/models/KintoneFields/kintoneFields";
 export { PluginId } from "./kintone-packages/domain/models/KintonePluginId/pluginId";
 export { KintoneRecord } from "./kintone-packages/domain/models/KintoneRecord/kintoneRecord";

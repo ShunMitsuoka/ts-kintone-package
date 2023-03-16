@@ -1,7 +1,6 @@
 import { AppId } from "../../../domain/models/KintoneApp/appId";
 import { KintoneApp } from "../../../domain/models/KintoneApp/kintoneApp";
 import { KintoneField } from "../../../domain/models/KintoneField/kintoneField";
-import { KintoneFieldPropertyOption } from "../../../domain/models/KintoneField/kintoneFieldPropertyOption";
 import { KintoneRestFieldApiConverter } from "../../services/kintoneRestFieldApiConverter";
 
 
