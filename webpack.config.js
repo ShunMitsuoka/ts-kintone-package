@@ -2,8 +2,9 @@ module.exports = {
     entry: './src',
     output: {
         filename: "index.js",
-        library: 'ts-kintone-package',
-        libraryTarget: 'umd'
+        library: 'TSKintone',
+        libraryTarget: 'umd',
+        globalObject: 'this',
     },
     module: {
       rules: [
