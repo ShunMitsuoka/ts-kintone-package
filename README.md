@@ -1,4 +1,4 @@
-kintoneのプラグイン開発をより効率的に行えるようにするライブラリです
+kintoneのプラグイン開発を効率的に行うためのTypeScript対応ライブラリです
 
 # 読み込み方法
 ・npm 
@@ -8,7 +8,7 @@ npm i ts-kintone-package
 
 ・cdn
 ```html
-<script src="https://cdn.jsdelivr.net/npm/ts-kintone-package@1.0.0/dist/index.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/ts-kintone-package/dist/index.js"></script>
 
 <script>
 const appId = new TSKintone.AppId(1);
