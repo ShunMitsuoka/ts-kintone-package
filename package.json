@@ -10,6 +10,7 @@
     "dist",
     "src"
   ],
+  "keywords": ["kintone", "TypeScript"],
   "scripts": {
     "dev": "webpack --mode development --devtool=source-map",
     "build": "webpack --mode production"
