@@ -1,6 +1,6 @@
 {
   "name": "ts-kintone-package",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Kintone Plugin Develop Support Libraries",
   "author": "SHUN MITSUOKA",
   "license": "MIT",
@@ -10,7 +10,10 @@
     "dist",
     "src"
   ],
-  "keywords": ["kintone", "TypeScript"],
+  "keywords": [
+    "kintone",
+    "TypeScript"
+  ],
   "scripts": {
     "dev": "webpack --mode development --devtool=source-map",
     "build": "webpack --mode production"
