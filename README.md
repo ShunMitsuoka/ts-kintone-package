@@ -1,6 +1,6 @@
 kintoneのプラグイン開発を効率的に行うためのTypeScript対応ライブラリです
 
-# 読み込み方法
+## 読み込み方法
 ・npm 
 ```Shell
 npm i ts-kintone-package
@@ -61,3 +61,8 @@ const kintoneAppRepository = new KintoneAppRepository()
 const currentApp : KintoneApp = await kintoneAppRepository.getCurrentApp();
 const fieldType = currentApp.getFields().getField('フィールドコード1').getFieldType();
 ```
+
+## Github
+[Github](https://github.com/ShunMitsuoka/ts-kintone-package)
+## ドキュメント
+[Wiki](https://github.com/ShunMitsuoka/ts-kintone-package/wiki)
