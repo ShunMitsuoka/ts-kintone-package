@@ -1,3 +1,4 @@
+import { KintoneApiErrorMessage } from "../../application/consts/kintoneApiErrorMessage";
 import { KintoneViewRepositoryInterface } from "../../domain/interfaces/repositories/kintoneViewRepositoryInterface";
 import { AppId } from "../../domain/models/KintoneApp/appId";
 import { KintoneFieldCode } from "../../domain/models/KintoneField/kintoneFieldCode";
@@ -42,7 +43,7 @@ export class KintoneViewRepository extends BaseKintoneRepository implements Kint
             }
         })
         .catch((error) => {
-            this.catchKintoneApiError(error);
+            this.catchKintoneApiError(error, KintoneApiErrorMessage.FAILED_TO_GET_ALL_VIEWS);
         });
         return new KintoneViews(kintoneViews, revision);
     }

@@ -34,4 +34,19 @@ export class KintoneFieldType implements ValueObject {
         }
         return false;
     }
+
+    public isLookUpCopyFieldType() : boolean{
+        switch (this.type) {
+            case KintoneFieldTypeConst.SINGLE_LINE_TEXT.type:
+            case KintoneFieldTypeConst.NUMBER.type:
+            case KintoneFieldTypeConst.CALC.type:
+            case KintoneFieldTypeConst.LOOK_UP.type:
+            case KintoneFieldTypeConst.LINK.type:
+            case KintoneFieldTypeConst.RECORD_NUMBER.type:
+                return true;
+            default:
+                break;
+        }
+        return false;
+    }
 }

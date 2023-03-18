@@ -1,4 +1,5 @@
 
+import { KintoneApiErrorMessage } from "../../application/consts/kintoneApiErrorMessage";
 import { KintoneAppConst } from "../../domain/consts/kintoneAppConst";
 import { KintoneAppRepositoryInterface } from "../../domain/interfaces/repositories/kintoneAppRepositoryInterface";
 import { AppId } from "../../domain/models/KintoneApp/appId";
@@ -32,7 +33,7 @@ export class KintoneAppRepository extends BaseKintoneRepository implements Kinto
     async getByAppId(appId: AppId, preview : boolean = false): Promise<KintoneApp> {
         const res = await this.kintoneRestAppApi.get(appId)
         .catch((error) => {
-            this.catchKintoneApiError(error);
+            this.catchKintoneApiError(error, KintoneApiErrorMessage.FAILED_TO_GET_APP_INFO);
         });
         const app = new KintoneApp(
             new AppId(res.appId),
@@ -74,7 +75,7 @@ export class KintoneAppRepository extends BaseKintoneRepository implements Kinto
             });
         })
         .catch((error) => {
-            this.catchKintoneApiError(error);
+            this.catchKintoneApiError(error, KintoneApiErrorMessage.FAILED_TO_GET_ALL_APPS);
         });
         Array.prototype.push.apply(result, kintoneApps);
         if(kintoneApps.length === limit){

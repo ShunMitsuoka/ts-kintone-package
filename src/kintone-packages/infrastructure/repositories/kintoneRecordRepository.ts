@@ -1,5 +1,6 @@
 
 import {chunk} from 'lodash';
+import { KintoneApiErrorMessage } from '../../application/consts/kintoneApiErrorMessage';
 import { KintoneRecordRepositoryInterface } from '../../domain/interfaces/repositories/kintoneRecordRepositoryInterface';
 import { AppId } from '../../domain/models/KintoneApp/appId';
 import { KintoneField } from '../../domain/models/KintoneField/kintoneField';
@@ -56,7 +57,7 @@ export class KintoneRecordRepository extends BaseKintoneRepository implements Ki
                 }
             },
             (error) => {
-                this.catchKintoneApiError(error);
+                this.catchKintoneApiError(error, KintoneApiErrorMessage.FAILED_TO_GET_ALL_RECORD);
             }
         );
         result = result || [];
@@ -76,7 +77,7 @@ export class KintoneRecordRepository extends BaseKintoneRepository implements Ki
             response = resp;
         })
         .catch((error) => {
-            this.catchKintoneApiError(error);
+            this.catchKintoneApiError(error, KintoneApiErrorMessage.FAILED_TO_CRAETE_RECORD);
         });
         record.setRecordId(new KintoneRecordId(response.id));
         return true;
@@ -92,7 +93,7 @@ export class KintoneRecordRepository extends BaseKintoneRepository implements Ki
                 response = resp;
             })
             .catch((error) => {
-                this.catchKintoneApiError(error);
+                this.catchKintoneApiError(error, KintoneApiErrorMessage.FAILED_TO_CRAETE_RECORD);
             });
             const ids = response.ids;
             for (let j = 0; j < ids.length; j++) {
@@ -109,7 +110,7 @@ export class KintoneRecordRepository extends BaseKintoneRepository implements Ki
             response = resp;
         })
         .catch((error) => {
-            this.catchKintoneApiError(error);
+            this.catchKintoneApiError(error, KintoneApiErrorMessage.FAILED_TO_UPDATE_RECORD);
         });
         return true;
     }
@@ -125,7 +126,7 @@ export class KintoneRecordRepository extends BaseKintoneRepository implements Ki
             response = resp;
         })
         .catch((error) => {
-            this.catchKintoneApiError(error);
+            this.catchKintoneApiError(error, KintoneApiErrorMessage.FAILED_TO_UPDATE_RECORD);
         });
         return true;
     }
@@ -137,7 +138,7 @@ export class KintoneRecordRepository extends BaseKintoneRepository implements Ki
                 result = true;
         })
         .catch((error) => {
-            this.catchKintoneApiError(error);
+            this.catchKintoneApiError(error, KintoneApiErrorMessage.FAILED_TO_DELETE_RECORD);
             }
         );
         return result;

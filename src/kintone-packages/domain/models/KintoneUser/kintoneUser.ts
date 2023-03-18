@@ -1,4 +1,5 @@
 import { Entity } from "../../interfaces/models/entity";
+import { KintoneLanguage, KintoneLanguageType } from "./kintoneLanguage";
 import { KintoneUserId } from "./kintoneUserId";
 
 export class KintoneUser implements Entity { 
@@ -6,20 +7,20 @@ export class KintoneUser implements Entity {
     private name : string;
     private code : string;
     private email : string;
-    private language : string;
+    private language : KintoneLanguage;
 
     constructor(
         userId: KintoneUserId,
         name: string,
         code: string,
         email: string,
-        language: string,
+        language: KintoneLanguageType,
         ) {
         this.userId = userId;
         this.name = name;
         this.code = code;
         this.email = email;
-        this.language = language;
+        this.language = new KintoneLanguage(language);
     }
     public getName() : string{
         return this.name;
@@ -30,7 +31,7 @@ export class KintoneUser implements Entity {
     public getEmail() : string{
         return this.email;
     }
-    public getLanguage() : string{
-        return this.language;
+    public getLanguage() : KintoneLanguageType{
+        return this.language.language;
     }
 }

@@ -83,7 +83,7 @@ export class KintoneRestFieldApiConverter{
         });
         return {
             relatedApp : {
-                app : lookUp.appId,
+                app : lookUp.appId.id,
                 code : lookUp.appCode,
             },
             relatedKeyField : lookUp.relatedKeyField.fieldCode, 

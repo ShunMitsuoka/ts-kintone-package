@@ -1,4 +1,3 @@
-
 export { KintoneAppConst } from "./kintone-packages/domain/consts/kintoneAppConst";
 export { KintoneFieldTypeConst } from "./kintone-packages/domain/consts/kintoneFieldTypeConst";
 export { AppId } from "./kintone-packages/domain/models/KintoneApp/appId";
@@ -36,6 +35,7 @@ export { KintoneRecord } from "./kintone-packages/domain/models/KintoneRecord/ki
 export { KintoneRecordId } from "./kintone-packages/domain/models/KintoneRecord/kintoneRecordId";
 export { KintoneUser } from "./kintone-packages/domain/models/KintoneUser/kintoneUser";
 export { KintoneUserId } from "./kintone-packages/domain/models/KintoneUser/kintoneUserId";
+export { KintoneLanguage } from "./kintone-packages/domain/models/KintoneUser/kintoneLanguage";
 export { KintoneArrayValue } from "./kintone-packages/domain/models/KintoneValue/kintoneArrayValue";
 export { KintoneSingleValue } from "./kintone-packages/domain/models/KintoneValue/kintoneSingleValue";
 export { KintoneView } from "./kintone-packages/domain/models/KintoneViews/kintoneView";
@@ -73,3 +73,9 @@ export { KintoneRestFieldsApi } from "./kintone-packages/infrastructure/external
 export { KintoneRestFileApi } from "./kintone-packages/infrastructure/externalapi/kintoneRestApi/kintoneRestFileApi";
 export { KintoneRestRecordApi } from "./kintone-packages/infrastructure/externalapi/kintoneRestApi/kintoneRestRecordApi";
 export { KintoneRestViewApi } from "./kintone-packages/infrastructure/externalapi/kintoneRestApi/kintoneRestViewApi";
+
+/**
+ * Error 関連
+ */
+ export { KintoneApiError } from "./kintone-packages/application/model/errors/kintoneApiError";
+ export { KintoneErrorService } from "./kintone-packages/application/services/kintoneErrorService";

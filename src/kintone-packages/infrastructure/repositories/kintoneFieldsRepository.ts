@@ -1,4 +1,5 @@
 
+import { KintoneApiErrorMessage } from "../../application/consts/kintoneApiErrorMessage";
 import { KintoneFieldRepositoryInterface } from "../../domain/interfaces/repositories/kintoneFieldRepositoryInterface";
 import { AppId } from "../../domain/models/KintoneApp/appId";
 import { KintoneApp } from "../../domain/models/KintoneApp/kintoneApp";
@@ -47,7 +48,7 @@ export class KintoneFieldsRepository extends BaseKintoneRepository  implements K
                 }
             },
             (error) => {
-                this.catchKintoneApiError(error);
+                this.catchKintoneApiError(error, KintoneApiErrorMessage.FAILED_TO_GET_ALL_FIELDS);
             }
         );
         return result;
@@ -59,7 +60,7 @@ export class KintoneFieldsRepository extends BaseKintoneRepository  implements K
                 result = true;
             },
             (error) => {
-                this.catchKintoneApiError(error);
+                this.catchKintoneApiError(error, KintoneApiErrorMessage.FAILED_TO_CRAETE_FIELD);
             }
         );
         return result;
@@ -71,7 +72,7 @@ export class KintoneFieldsRepository extends BaseKintoneRepository  implements K
                 result = true;
             },
             (error) => {
-                this.catchKintoneApiError(error);
+                this.catchKintoneApiError(error, KintoneApiErrorMessage.FAILED_TO_UPDATE_FIELD);
             }
         );
         return result;
@@ -83,7 +84,7 @@ export class KintoneFieldsRepository extends BaseKintoneRepository  implements K
                 result = true;
             },
             (error) => {
-                this.catchKintoneApiError(error);
+                this.catchKintoneApiError(error, KintoneApiErrorMessage.FAILED_TO_DELETE_FIELD);
             }
         );
         return result;
