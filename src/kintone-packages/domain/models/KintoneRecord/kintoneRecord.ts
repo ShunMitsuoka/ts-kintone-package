@@ -1,7 +1,6 @@
 import { Entity } from "../../interfaces/models/entity";
 import { KintoneField } from "../KintoneField/kintoneField";
 import { KintoneFields } from "../KintoneFields/kintoneFields";
-import { KintoneSingleValue } from "../KintoneValue/kintoneSingleValue";
 import { KintoneRecordId } from "./kintoneRecordId";
 
 

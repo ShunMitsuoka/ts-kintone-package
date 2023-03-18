@@ -12,6 +12,8 @@ export { KintoneFieldProperties } from "./kintone-packages/domain/models/Kintone
 export { KintoneFieldPropertyOption } from "./kintone-packages/domain/models/KintoneField/kintoneFieldPropertyOption";
 export { KintoneFieldType } from "./kintone-packages/domain/models/KintoneField/kintoneFieldType";
 export { KintoneDefaultFields } from "./kintone-packages/domain/models/KintoneFields/kintoneDefaultFields";
+export { KintoneFields } from "./kintone-packages/domain/models/KintoneFields/kintoneFields";
+
 /**
  * KintoneDefaultField関連
  */
@@ -29,7 +31,6 @@ export { UpdatedTime } from "./kintone-packages/domain/models/KintoneField/Defau
 export { LookUpOption } from "./kintone-packages/domain/models/KintoneField/FieldOptions/lookUpOption";
 export { ReferenceTable } from "./kintone-packages/domain/models/KintoneField/FieldOptions/referenceTable";
 
-export { KintoneFields } from "./kintone-packages/domain/models/KintoneFields/kintoneFields";
 export { PluginId } from "./kintone-packages/domain/models/KintonePluginId/pluginId";
 export { KintoneRecord } from "./kintone-packages/domain/models/KintoneRecord/kintoneRecord";
 export { KintoneRecordId } from "./kintone-packages/domain/models/KintoneRecord/kintoneRecordId";

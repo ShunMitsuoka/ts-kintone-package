@@ -15,6 +15,15 @@ export class KintoneFields implements Entity {
         return this.fields;
     }
 
+    public getField(fieldCode: string) : KintoneField
+    {
+        if(this.fields.has(fieldCode)){
+            return this.fields.get(fieldCode)!
+        }
+        throw new Error("The FieldCode does not exist in this Fields");
+        
+    }
+
     public hasFeldCode(fieldCode: string) : boolean
     {
         return this.fields.has(fieldCode);
