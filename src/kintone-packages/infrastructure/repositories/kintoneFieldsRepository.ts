@@ -19,9 +19,39 @@ export class KintoneFieldsRepository extends BaseKintoneRepository  implements K
         this.kintoneRestFieldsApi = new KintoneRestFieldsApi();
     }
     
-    getByFieldCode(appId: AppId): Promise<KintoneField> {
-        throw new Error("Method not implemented.");
+    async getByFieldCode(appId: AppId, fieldCode : string, preview : boolean = false ): Promise<KintoneField | undefined> {
+        let result : KintoneField | undefined = undefined;
+        await this.kintoneRestFieldsApi.get(appId, preview).then(
+            (resp) => {
+                const properties = resp.properties;
+                for (const key in properties) {
+                    const property = properties[key];
+                    if(property.code ==  fieldCode){
+                        result = new KintoneField(
+                            new KintoneFieldCode(property.code), 
+                            new KintoneFieldProperties({
+                                label : property.label,
+                                type : KintoneFieldConverter.makeFieldType(property),
+                                noLabel : property.noLabel,
+                                required : property.required,
+                                unique : property.unique,
+                                options : KintoneFieldConverter.makeOptions(property),
+                                defaultValue : KintoneFieldConverter.makeDefaultValue(property),
+                                lookUp : KintoneFieldConverter.makeLookUp(property),
+                                referenceTable : KintoneFieldConverter.makeReferenceTable(property)
+                            })
+                        );
+                        break;
+                    }
+                }
+            },
+            (error) => {
+                this.catchKintoneApiError(error, KintoneApiErrorMessage.FAILED_TO_GET_ALL_FIELDS);
+            }
+        );
+        return result;
     }
+    
     async getAll(appId: AppId, preview : boolean = false): Promise<Map<string, KintoneField>> {
         let result: Map<string, KintoneField> = new Map<string, KintoneField>();
         await this.kintoneRestFieldsApi.get(appId, preview).then(
