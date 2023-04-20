@@ -28,6 +28,7 @@ export class KintoneFieldType implements ValueObject {
             case KintoneFieldTypeConst.FILE.type:
             case KintoneFieldTypeConst.SUBTABLE.type:
             case KintoneFieldTypeConst.CATEGORY.type:
+            case KintoneFieldTypeConst.STATUS_ASSIGNEE.type:
                 return true;
             default:
                 break;
