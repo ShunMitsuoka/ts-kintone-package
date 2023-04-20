@@ -27,6 +27,7 @@ export class KintoneFieldType implements ValueObject {
             case KintoneFieldTypeConst.GROUP_SELECT.type:
             case KintoneFieldTypeConst.FILE.type:
             case KintoneFieldTypeConst.SUBTABLE.type:
+            case KintoneFieldTypeConst.CATEGORY.type:
                 return true;
             default:
                 break;
