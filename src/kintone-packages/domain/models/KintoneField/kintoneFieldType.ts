@@ -8,6 +8,16 @@ export class KintoneFieldType implements ValueObject {
         this.type = type;
     }
 
+    public isAbleToRetrieveValue() : boolean{
+        switch (this.type) {
+            case KintoneFieldTypeConst.REFERENCE_TABLE.type:
+                return false;
+            default:
+                break;
+        }
+        return true;
+    }
+
     public isArrayValueFieldType() : boolean{
         switch (this.type) {
             case KintoneFieldTypeConst.CHECK_BOX.type:
