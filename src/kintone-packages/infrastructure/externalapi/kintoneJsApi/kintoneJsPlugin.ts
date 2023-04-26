@@ -13,8 +13,17 @@ export class KintoneJsPlugin {
     }
 
     public static getCurrentAppId() : AppId{
-        const appId = kintone.app.getId();
+        let appId;
+        if(this.isMobile()){
+            appId = kintone.mobile.app.getId();
+        }else{
+            appId = kintone.app.getId();
+        }
         return new AppId(Number(appId));
+    }
+
+    public static isMobile() : boolean{
+        return !!location.pathname.match(/^\/k\/m/);
     }
 
     public static getLoginUser() : KintoneUser{
