@@ -1,5 +1,9 @@
 kintoneのプラグイン開発を効率的に行うためのTypeScript対応ライブラリです
 
+## 公式ドキュメント
+本ライブラリのドキュメントは以下です。  
+[『ts-kintone-package』公式ドキュメント](https://github.com/ShunMitsuoka/ts-kintone-package-document)
+
 ## 読み込み方法
 ・npm 
 ```Shell
@@ -15,7 +19,7 @@ const appId = new TSKintone.AppId(1);
 </script>
 ```
 
-## kintone オブジェクト
+## ライブラリ概要
 当ライブラリには以下のようなオブジェクトが存在します。
 
 |  オブジェクト  |  説明  |
@@ -63,6 +67,12 @@ const fieldType = currentApp.getFields().getField('フィールドコード1').g
 ```
 
 ## Github
+本ライブラリのソースは以下で管理しています。  
 [Github](https://github.com/ShunMitsuoka/ts-kintone-package)
-## ドキュメント
-[Wiki](https://github.com/ShunMitsuoka/ts-kintone-package/wiki)
+## 公式ドキュメント
+[公式ドキュメント](https://github.com/ShunMitsuoka/ts-kintone-package-document)
+
+
+## お問い合わせ
+本ライブラリに対するお問い合わせは以下からお願いします。  
+[CONTACT FORM](https://tri-an-gout.com/contact)
