@@ -8,43 +8,46 @@ import { KintoneViews } from "../../domain/models/KintoneViews/kintoneViews";
 import { KintoneRestViewApi } from "../externalapi/kintoneRestApi/kintoneRestViewApi";
 import { BaseKintoneRepository } from "./baseKintoneRepository";
 
-export class KintoneViewRepository extends BaseKintoneRepository implements KintoneViewRepositoryInterface{
+export class KintoneViewRepository extends BaseKintoneRepository implements KintoneViewRepositoryInterface {
 
-    private kintoneRestViewApi : KintoneRestViewApi;
+    private kintoneRestViewApi: KintoneRestViewApi;
 
-    public constructor(){
+    public constructor() {
         super();
         this.kintoneRestViewApi = new KintoneRestViewApi();
     }
-    
+
     async getAll(appId: AppId): Promise<KintoneViews> {
-        let kintoneViews:KintoneView[] = [];
-        let revision : number | undefined = undefined;
+        let kintoneViews: KintoneView[] = [];
+        let revision: number | undefined = undefined;
 
         await this.kintoneRestViewApi.getAll(appId)
-        .then((resp) => {
-            revision = Number(resp.revision);
-            let views : Object = resp.views;
-            for (const key in views) {
-                const view = views[key];
-                const fields : string[] = view.fields;
-                kintoneViews.push(
-                    new KintoneView(
-                        new KintoneViewId(view.id),
-                        view.name,
-                        view.type,
-                        fields.map(field => { return new KintoneFieldCode(field)}),
-                        view.device,
-                        view.filterCond,
-                        view.sort,
-                        Number(view.index),
+            .then((resp) => {
+                revision = Number(resp.revision);
+                let views: Object = resp.views;
+                for (const key in views) {
+                    const view = views[key];
+                    const fields: string[] = view.fields;
+                    if (view.type != KintoneView.KintoneViewType.LIST) {
+                        continue;
+                    }
+                    kintoneViews.push(
+                        new KintoneView(
+                            new KintoneViewId(view.id),
+                            view.name,
+                            view.type,
+                            fields.map(field => { return new KintoneFieldCode(field) }),
+                            view.device,
+                            view.filterCond,
+                            view.sort,
+                            Number(view.index),
+                        )
                     )
-                )
-            }
-        })
-        .catch((error) => {
-            this.catchKintoneApiError(error, KintoneApiErrorMessage.FAILED_TO_GET_ALL_VIEWS);
-        });
+                }
+            })
+            .catch((error) => {
+                this.catchKintoneApiError(error, KintoneApiErrorMessage.FAILED_TO_GET_ALL_VIEWS);
+            });
         return new KintoneViews(kintoneViews, revision);
     }
 }
